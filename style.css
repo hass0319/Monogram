@@ -8,6 +8,12 @@
 header{
   position: relative;
 }
+/*
+header .back{
+  background-color: #1a2456;
+  width: 100%;
+  height: 10vh;
+} */
 
 nav {
   position: fixed;
@@ -36,6 +42,8 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  padding: 20px;
+
 }
 
 nav .nav-logo a h3,
@@ -50,22 +58,42 @@ nav .nav-logo a h3,
   color: #ff8b68;
 }
 
-.drpdown1-content {
+.drpdown1-content,
+.drpdown2-content {
   display: none;
-  background-color: aqua;
-  color: white;
+  background-color: white;
   min-width: 160px;
   position: absolute;
   z-index: 1;
 }
 
-.drpdown1-content a {
+.drpdown1-content a, .drpdown2-content a {
+  padding: 5px 20px;
   display: block;
-  text-align: center;
+  text-align: left;
+  color: black;
 }
 
-.drpdown1:active .drpdown1-content {
+.drpdown1:focus-within .drpdown1-content,
+.drpdown2:focus-within .drpdown2-content {
   display: block;
 }
 
-.drpdown1-content
+/* Hero Styles */
+
+.hero-container {
+  display:grid;
+  grid-template-columns: repeat(2 1fr);
+  justify-content: center;
+  align-content: center;
+}
+
+.hero-container img {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.hero-container .hero-title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
