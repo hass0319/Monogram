@@ -178,11 +178,16 @@ main {
   max-width: 15%;
   width: 15%;
   height: 30px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+
   top: 20px;
   right: 0;
   position: absolute;
-  z-index: 100;
-display: flex;
+  z-index: 2;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -209,4 +214,120 @@ display: flex;
 
 .image-swap:hover img.secondary {
   opacity: 1;
+}
+
+.name-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* AD Styles */
+
+.ad-container {
+  background-image: url(/img_top/2ndhero.webp);
+  background-size: contain;
+  background-position: center;
+  width: auto;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  color: #1a2456;
+}
+
+.ad-container h1 {
+  font-weight: bolder;
+  font-size: 35px;
+  background-color: unset;
+  width: 350px;
+}
+
+.ad-container p {
+  font-weight: bolder;
+  font-size: 15px;
+  background-color: unset;
+}
+
+/* Product Container */
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-row: auto;
+  grid-template-areas:
+  "box6 box7 box8"
+  "box9 box10 box11"
+  "box12 box13 box14"
+  "box15 box16 box17";
+  gap: 2rem;
+  padding: 3rem 15rem;
+}
+
+.product-container .tag {
+  background-color: #ff8b68;
+  max-width: 20%;
+  width: 20%;
+  height: 30px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  top: 20px;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+}
+
+.box6 {
+  grid-area: box6;
+}
+
+.box7 {
+  grid-area: box7;
+}
+
+.box8 {
+  grid-area: box8;
+}
+
+.box9 {
+  grid-area: box9;
+}
+
+.box10 {
+  grid-area: box10;
+}
+
+.box11 {
+  grid-area: box11;
+}
+
+.box12 {
+  grid-area: box12;
+}
+
+.box13 {
+  grid-area: box13;
+}
+
+.box14 {
+  grid-area: box14;
+}
+
+.box15 {
+  grid-area: box15;
+}
+
+.box16 {
+  grid-area: box16;
+}
+
+.box17 {
+  grid-area: box17;
 }
