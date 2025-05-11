@@ -42,7 +42,6 @@ nav {
   flex-direction: row;
   gap: 40px;
   padding: 20px;
-
 }
 
 nav .nav-logo a h3,
@@ -61,7 +60,7 @@ nav .nav-logo a h3,
 .drpdown2-content {
   display: none;
   background-color: white;
-  min-width: 160px;
+  min-width: 30%;
   position: absolute;
   z-index: 1;
 }
@@ -84,6 +83,7 @@ nav .nav-logo a h3,
   background-image: url(./img_top/shop_cta_xl.webp);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 70vh;
   display:flex;
   flex-direction: column;
@@ -108,7 +108,6 @@ nav .nav-logo a h3,
   font-weight: bolder;
   font-size: 35px;
   background-color:unset;
-  width:350px;
 }
 
 .hero-container p {
@@ -118,7 +117,9 @@ nav .nav-logo a h3,
 }
 
 /* .hero-container .down-arrow{
-
+position: absolute;
+bottom: 20%;
+left: 50%;
 }
 
 .hero-container .down-arrow img {
@@ -136,10 +137,6 @@ main {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   grid-template-rows: auto;
-  grid-template-areas:
-  "box1 box2"
-  "box3 box4"
-  "box5 box5";
   color: black;
   justify-content: space-between;
   align-content: center;
@@ -147,24 +144,8 @@ main {
   padding: 3rem 15rem;
 }
 
-.box1 {
-  grid-area: box1;
-}
-
-.box2 {
-  grid-area: box2;
-}
-
-.box3 {
-  grid-area: box3;
-}
-
-.box4 {
-  grid-area: box4;
-}
-
 .box5 {
-  grid-area: box5;
+  grid-column: span 2;
 }
 
 .image-swap {
@@ -177,12 +158,12 @@ main {
   background-color: #ff8b68;
   max-width: 15%;
   width: 15%;
-  height: 30px;
+  min-height: 30px;
   padding: 0.2rem 0.4rem;
   font-size: 0.75rem;
   font-weight: bold;
 
-  top: 20px;
+  top: 20%;
   right: 0;
   position: absolute;
   z-index: 2;
@@ -227,7 +208,8 @@ main {
   background-image: url(./img_top/2ndhero.webp);
   background-size: contain;
   background-position: center;
-  width: auto;
+  background-repeat: no-repeat;
+  width: 100%;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -241,7 +223,7 @@ main {
   font-weight: bolder;
   font-size: 35px;
   background-color: unset;
-  width: 350px;
+  padding: 1.5rem;
 }
 
 .ad-container p {
@@ -254,13 +236,8 @@ main {
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat( 3, minmax(300px, 1fr));
   grid-row: auto;
-  grid-template-areas:
-  "box6 box7 box8"
-  "box9 box10 box11"
-  "box12 box13 box14"
-  "box15 box16 box17";
   gap: 2rem;
   padding: 3rem 15rem;
 }
@@ -284,50 +261,127 @@ main {
   align-items: center;
 }
 
-.box6 {
-  grid-area: box6;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    /* not absolute */
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-container,
+  .product-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .tag {
+    max-width: 40%;
+    font-size: 0.6rem;
+  }
+
+  .ad-container h1,
+  .hero-container h1,
+  .ad-container p,
+  .hero-container p {
+    font-size: 1rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .box5 {
+    grid-column: span 1;
+  }
 }
 
-.box7 {
-  grid-area: box7;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .preview-container,
+  .product-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .tag {
+    max-width: 35%;
+    font-size: 0.7rem;
+  }
+
+  .ad-container {
+    width: 100%;
+  }
 }
 
-.box8 {
-  grid-area: box8;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .preview-container,
+    .product-container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem 4rem;
+    }
+
+    .tag {
+      max-width: 25%;
+      font-size: 0.75rem;
+    }
+
+    .ad-container h1,
+    .hero-container h1 {
+      font-size: 28px;
+    }
+    .ad-container {
+      width: 100%;
+    }
 }
 
-.box9 {
-  grid-area: box9;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .preview-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 8rem;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* If you want 2 columns here */
+    padding: 3rem 8rem;
+  }
+
+  .tag {
+    max-width: 20%;
+  }
+
+  .ad-container {
+    width: 100%;
+  }
 }
 
-.box10 {
-  grid-area: box10;
-}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px) {
+  .preview-container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    padding: 2rem;
+  }
 
-.box11 {
-  grid-area: box11;
-}
+  .product-container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    padding: 2rem;
+  }
 
-.box12 {
-  grid-area: box12;
-}
+  .product-container .tag {
+    max-width: 25%;
+  }
 
-.box13 {
-  grid-area: box13;
-}
-
-.box14 {
-  grid-area: box14;
-}
-
-.box15 {
-  grid-area: box15;
-}
-
-.box16 {
-  grid-area: box16;
-}
-
-.box17 {
-  grid-area: box17;
+  .ad-container {
+    width: 100%;
+  }
 }
