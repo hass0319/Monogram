@@ -81,7 +81,7 @@ nav .nav-logo a h3,
 /* Hero Styles */
 
 .hero-container {
-  background-image: url(/img_top/shop_cta_xl.webp);
+  background-image: url(./img_top/shop_cta_xl.webp);
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -224,7 +224,7 @@ main {
 /* AD Styles */
 
 .ad-container {
-  background-image: url(/img_top/2ndhero.webp);
+  background-image: url(./img_top/2ndhero.webp);
   background-size: contain;
   background-position: center;
   width: auto;
