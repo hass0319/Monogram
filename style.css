@@ -2,14 +2,16 @@
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  background-color: #1a2456;
+}
 
+body {
+  background-color: #1a2456;
+  overflow-x: hidden;
 }
 
 header{
   position: relative;
 }
-
 
 nav {
   position: fixed;
@@ -82,15 +84,24 @@ nav .nav-logo a h3,
   background-image: url(/img_top/shop_cta_xl.webp);
   background-size: cover;
   background-position: center;
-
-  opacity: 50%;
-  height: 660px;
+  height: 70vh;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   color: #ffffff;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .hero-container h1 {
@@ -114,3 +125,88 @@ nav .nav-logo a h3,
   color: #ffffff;
   background-color: unset;
 } */
+
+/* Product Review 1 */
+
+main {
+  background-color: #f0efed;
+}
+
+.preview-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas:
+  "box1 box2"
+  "box3 box4"
+  "box5 box5";
+  color: black;
+  justify-content: space-between;
+  align-content: center;
+  gap: 2rem;
+  padding: 3rem 15rem;
+}
+
+.box1 {
+  grid-area: box1;
+}
+
+.box2 {
+  grid-area: box2;
+}
+
+.box3 {
+  grid-area: box3;
+}
+
+.box4 {
+  grid-area: box4;
+}
+
+.box5 {
+  grid-area: box5;
+}
+
+.image-swap {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.tag {
+  background-color: #ff8b68;
+  max-width: 15%;
+  width: 15%;
+  height: 30px;
+  top: 20px;
+  right: 0;
+  position: absolute;
+  z-index: 100;
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-swap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.image-swap img.secondary {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity .2s;
+}
+
+.image-swap:hover img.secondary {
+  opacity: 1;
+}
