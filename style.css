@@ -40,6 +40,7 @@ nav {
 .links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 40px;
   padding: 20px;
 }
@@ -76,6 +77,53 @@ nav .nav-logo a h3,
 .drpdown2:focus-within .drpdown2-content {
   display: block;
 }
+
+/* NAV SIDEBAR */
+
+/* Hide checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1002;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 250px;
+  height: 100vh;
+  background-color: #1a2456;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+/* Show menu when checkbox is checked */
+.menu-toggle:checked~.mobile-menu {
+  left: 0;
+}
+
 
 /* Hero Styles */
 
@@ -268,7 +316,7 @@ footer {
 
 .footer-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: flex-start;
   min-height: 30%;
@@ -363,6 +411,13 @@ padding-bottom: 0.5rem;
   .ad-container {
     width: 100%;
   }
+   .links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -385,6 +440,14 @@ padding-bottom: 0.5rem;
     .ad-container {
       width: 100%;
     }
+
+     .links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
