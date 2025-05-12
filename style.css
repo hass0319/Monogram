@@ -48,13 +48,11 @@ nav {
 nav .nav-logo a h3,
 .links a {
   text-decoration: none;
-  color:white;
+  color: #ffbba6;
 }
 
-.nav-logo a h3:hover,
-.links a:hover {
-  text-decoration: none;
-  color: #ff8b68;
+.links a {
+  font-size: smaller;
 }
 
 .drpdown1-content,
@@ -88,9 +86,10 @@ nav .nav-logo a h3,
 /* Hamburger Icon */
 .menu-icon {
   display: none;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   cursor: pointer;
-  gap: 5px;
+  gap: 10px;
   padding: 10px;
   z-index: 1002;
 }
@@ -103,13 +102,18 @@ nav .nav-logo a h3,
   border-radius: 2px;
 }
 
+.menu-icon a.menu-link {
+  color: #ffbba6;
+  text-decoration: none;
+}
+
 /* Sidebar Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
   left: -350px;
   width: 250px;
-  height: 100vh;
+  height: 100%;
   background-color: #1a2456;
   padding: 3rem 2rem;
   display: flex;
@@ -119,11 +123,19 @@ nav .nav-logo a h3,
   z-index: 1001;
 }
 
+.mobile-menu .toggle-link, .sub-sec{
+  text-decoration: none;
+  color:#ffbba6;
+}
+
+a.sub-sec {
+  padding-left: 20px;
+}
+
 /* Show menu when checkbox is checked */
 .menu-toggle:checked~.mobile-menu {
   left: 0;
 }
-
 
 /* Hero Styles */
 
@@ -156,12 +168,14 @@ nav .nav-logo a h3,
   font-weight: bolder;
   font-size: 35px;
   background-color:unset;
+  color: #ffbba6;
 }
 
 .hero-container p {
   font-weight: bolder;
   font-size: 15px;
   background-color:unset;
+  color: #ffbba6;
 }
 
 /* .hero-container .down-arrow{
@@ -202,7 +216,7 @@ main {
   width: 100%;
 }
 
-.tag {
+.preview-container .tag {
   background-color: #ff8b68;
   max-width: 15%;
   width: 15%;
@@ -211,7 +225,7 @@ main {
   font-size: 0.75rem;
   font-weight: bold;
 
-  top: 20%;
+  top: 5%;
   right: 0;
   position: absolute;
   z-index: 2;
@@ -250,15 +264,33 @@ main {
   justify-content: space-between;
 }
 
+.name-price p.product-name {
+  font-weight: bold;
+  font-size: medium;
+  color: #1a2456;
+}
+
+.name-price p.price {
+  font-size: smaller;
+  color: #313754;
+}
+
+p.product-description {
+  font-size: smaller;
+  color: #1a2456;
+
+}
+
 /* AD Styles */
 
 .ad-container {
   background-image: url(./img_top/2ndhero.webp);
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 50vh;
+  height: 500px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -322,6 +354,7 @@ footer {
   min-height: 30%;
   background-color: #1a2456;
   padding: 2rem 1rem;
+  text-transform: none;
 }
 
 .column {
@@ -333,6 +366,7 @@ footer {
 .column h4, .f-tags {
   color: #ffbba6;
   text-decoration: none;
+  text-transform: none;
 }
 
 .column h4{
@@ -343,15 +377,49 @@ footer {
 .footer-container .column .f-tags {
 font-size: 0.7rem;
 padding-bottom: 0.5rem;
+text-transform: none;
 }
 
-.footer-container .column .f-tags {
-font-size:0.7rem;
-padding-bottom: 0.5rem;
+form.f-tags {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
-.icons {
-  color: #f0efed;
+form.f-tags input {
+  border: #ffbba6 1px solid;
+  background-color: #1a2456;
+  height: 15px;
+}
+
+form.f-tags input[type=email] {
+  font-size: 10px;
+  padding: 0.4em;
+}
+
+form.f-tags button {
+  font-size: 10px;
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #89695f;
+  border: none
+}
+
+p.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding-bottom: 0.5em;
+}
+
+p.icons a{
+  display: flex;
+  width: 27px;
+  justify-content: center;
+  background-color: #ffbba6;
+  border-radius: 100%;
+  padding: 0.1rem;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -363,6 +431,11 @@ padding-bottom: 0.5rem;
     align-items: center;
     position: static;
     /* not absolute */
+  }
+
+  .media-nav label.menu-icon {
+    display: flex;
+    flex-direction: column;
   }
 
   .links {
@@ -396,7 +469,7 @@ padding-bottom: 0.5rem;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 768px) {
   .preview-container,
   .product-container {
     grid-template-columns: 1fr;
@@ -417,11 +490,12 @@ padding-bottom: 0.5rem;
 
   .menu-icon {
     display: flex;
+    flex-direction: row;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 992px) {
   .preview-container,
     .product-container {
       grid-template-columns: repeat(2, 1fr);
@@ -451,15 +525,14 @@ padding-bottom: 0.5rem;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 1200px) {
   .preview-container {
     grid-template-columns: repeat(2, 1fr);
     padding: 3rem 8rem;
   }
 
   .product-container {
-    grid-template-columns: repeat(2, 1fr);
-    /* If you want 2 columns here */
+    grid-template-columns: repeat(3, 1fr);
     padding: 3rem 8rem;
   }
 
@@ -470,17 +543,22 @@ padding-bottom: 0.5rem;
   .ad-container {
     width: 100%;
   }
+
+  .links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1024px) {
-  .preview-container {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    padding: 2rem;
-  }
+@media only screen and (max-width: 1200px) {
 
   .product-container {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 2rem;
   }
 
