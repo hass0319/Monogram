@@ -430,7 +430,7 @@ p.icons a{
   padding: 0.1rem;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 460px){
+@media only screen and (max-width: 460px){
   .preview-container,
   .product-container {
     display: grid;
@@ -452,6 +452,10 @@ p.icons a{
   }
   .mobile-menu {
     display: flex;
+  }
+
+  .box5 {
+    grid-column: span 1;
   }
 
 }
@@ -477,6 +481,10 @@ p.icons a{
   .menu-icon {
     display: flex;
     flex-direction: row;
+  }
+
+  .box5 {
+    grid-column: span 1;
   }
 }
 
@@ -509,6 +517,10 @@ p.icons a{
   .menu-icon {
     display: flex;
     flex-direction: row;
+  }
+
+  .box5 {
+    grid-column: span 1;
   }
 }
 
@@ -544,6 +556,10 @@ p.icons a{
   .menu-icon {
     display: flex;
     flex-direction: row;
+  }
+
+  .box5 {
+    grid-column: span 1;
   }
 }
 
